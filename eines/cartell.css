@@ -1,0 +1,71 @@
+/* Cartell DIN A3 apaïsat · Margell D-K */
+@page { size: 420mm 297mm; margin: 0; }
+:root { --navy: #0f2f57; --mar: #1b6fae; --cel: #63b3ed; --aigua: #eaf3fb; --sorra: #f7f1e6; --teula: #c8582a; --text: #1c2733; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Source Sans 3", sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.full {
+  width: 420mm; height: 297mm; overflow: hidden; position: relative;
+  background: #fff; display: grid; grid-template-rows: 62mm 40mm 1fr 11mm;
+}
+
+/* Capçalera */
+header {
+  position: relative; overflow: hidden; text-align: center; color: #fff;
+  background: linear-gradient(160deg, var(--navy) 0%, #164878 60%, var(--mar) 100%);
+  padding: 9mm 14mm 0;
+}
+.onada {
+  position: absolute; left: 0; right: 0; bottom: -1px; height: 12mm; background: #fff;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 46' preserveAspectRatio='none'%3E%3Cpath d='M0 26C150 4 300 4 450 22s300 22 450 4 300-14 300-14V46H0z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.loc { margin: 0 0 2mm; font: 700 11pt Montserrat, sans-serif; letter-spacing: .3em; text-transform: uppercase; color: var(--cel); }
+h1 { margin: 0; font: 800 34pt/1.08 Montserrat, sans-serif; letter-spacing: -.01em; }
+h1 .b { display: block; font-weight: 600; font-size: 20pt; color: #d5e6f6; margin-bottom: 1.5mm; }
+.wel { margin: 3mm 0 0; font-size: 13pt; color: #cfe1f3; letter-spacing: .02em; }
+
+/* Pictogrames */
+.pictos { display: grid; grid-template-columns: 1.15fr 1fr 1.15fr; gap: 6mm; padding: 2mm 12mm 3mm; }
+.grup {
+  background: var(--aigua); border-radius: 5mm; display: flex; align-items: center; justify-content: space-evenly;
+  padding: 3mm 4mm;
+}
+.pic { display: flex; flex-direction: column; align-items: center; gap: 1.5mm; position: relative; }
+.pi {
+  font-family: "Material Symbols Rounded"; font-size: 15mm; line-height: 1; color: var(--navy);
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
+  width: 19mm; height: 19mm; display: grid; place-items: center;
+  background: #fff; border-radius: 50%; border: .9mm solid var(--mar);
+}
+.pic.no .pi, .pic.nx .pi { border-color: var(--teula); color: #4a5868; }
+.pic.no .pi::after {
+  content: ""; position: absolute; top: 9.5mm; left: 50%; width: 19mm; height: .9mm; background: var(--teula);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.pv { font: 700 13pt Montserrat, sans-serif; color: var(--navy); white-space: nowrap; }
+
+/* Columnes */
+.cols { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); padding: 1mm 8mm 0; }
+.col {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 0 3mm; border-left: .5mm solid #c9d9ea;
+}
+.col:first-child { border-left: 0; }
+.band { width: 28mm; height: 18.7mm; object-fit: cover; border-radius: 1.2mm; box-shadow: 0 0 0 .3mm #b8c6d6; }
+.col h2 { margin: 3mm 0 2mm; font: 800 14pt Montserrat, sans-serif; color: var(--navy); text-transform: uppercase; letter-spacing: .03em; }
+.txt { flex: 1; display: flex; flex-direction: column; gap: 2.6mm; }
+.txt p { margin: 0; font-size: 12.6pt; line-height: 1.27; }
+.txt p:first-child { font-weight: 700; color: var(--navy); }
+.txt p:last-child { color: var(--mar); font-weight: 600; }
+.qr { width: 38mm; height: 38mm; padding: 2.2mm; background: #fff; border: .6mm solid var(--navy); border-radius: 2.5mm; margin-top: 2mm; }
+.qr svg { width: 100%; height: 100%; display: block; }
+.esc { margin: 1.5mm 0 0; height: 10mm; display: flex; align-items: center; justify-content: center; font: 700 10.5pt/1.15 Montserrat, sans-serif; color: var(--navy); }
+.url { margin: .6mm 0 0; font-size: 8pt; color: #6a7a8e; letter-spacing: .01em; }
+.gr { margin: 3.5mm 0 3mm; padding-top: 3mm; border-top: .5mm solid var(--teula); width: 100%; font-size: 10.5pt; line-height: 1.25; color: var(--text); }
+.gr strong { color: var(--navy); }
+
+footer {
+  background: var(--navy); color: #c9d9ea; display: flex; align-items: center; justify-content: center;
+  font: 600 9.5pt Montserrat, sans-serif; letter-spacing: .12em; text-transform: uppercase;
+}
+.nw { white-space: nowrap; }
