@@ -174,6 +174,7 @@ margelldk.github.io/
 │   ├── genera.py               ← generador de la web, el cartell i el PDF
 │   ├── cartell.css             ← disseny del cartell
 │   └── cartell.html            ← cartell en HTML (generat)
+├── esborranys/                 ← 🔒 documents originals i notes (només en local, no es publica mai)
 ├── 404.html                    ← redirigeix a la portada qualsevol adreça inexistent
 └── README.md
 ```
